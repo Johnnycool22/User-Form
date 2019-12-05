@@ -1,6 +1,6 @@
 // Form Blur Event Listeners
 document.getElementById('name').addEventListener('blur', validateName);
-document.getElementById('zip').addEventListener('blur', validateZip);
+document.getElementById('code').addEventListener('blur', validatePostCode);
 document.getElementById('email').addEventListener('blur', validateEmail);
 document.getElementById('phone').addEventListener('blur', validatePhone);
 
@@ -15,19 +15,26 @@ function validateName() {
   }
 }
 
-function validateZip() {
-  const zip = document.getElementById('zip');
+function validatePostCode() {
+  const postcode = document.getElementById('code');
   const re = /^[A-Z]{2}([0-9]{2})(-[0-9]{1})([A-Z]{2})$/i;
 
-  if(!re.test(zip.value)) {
-    zip.classList.add('is-invalid');
+  if(!re.test(postcode.value)) {
+    postcode.classList.add('is-invalid');
   } else {
-    zip.classList.remove('is-invalid');
+    postcode.classList.remove('is-invalid');
   }
 }
 
 function validateEmail() {
+  const email = document.getElementById('email');
+  const re = /^[a-zA-Z]{2,10}$/;
 
+  if(!re.test(name.value)) {
+    name.classList.add('is-invalid');
+  } else {
+    name.classList.remove('is-invalid');
+  }
 }
 
 function validatePhone() {
